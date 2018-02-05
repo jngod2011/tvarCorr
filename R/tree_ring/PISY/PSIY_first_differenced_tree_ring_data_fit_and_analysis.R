@@ -279,8 +279,6 @@ for(i in 1:length(fit.list)){
   
   par.est[[pair.name]] <- fit.list[[pair.name]]$par
   
-  
-  
   try(vcov.hat[[pair.name]] <- solve(fit.list[[pair.name]]$hessian)[pars,pars])# estimated var-covariance matrix
   if(is.null(vcov.hat[[pair.name]])){error.delta[[pair.name]] <- i} ## extract error pair.names and index number in fit.list
   if(class(vcov.hat[[pair.name]]) == "NULL"){  #test if error in solving hessian, paste error message if so and record correlation pair.name
